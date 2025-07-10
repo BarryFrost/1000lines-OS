@@ -12,7 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    # - uses: actions/checkout@v4
+    - name: Docker Setup QEMU
+      uses: docker/setup-qemu-action@v3.6.0
+      with: 
+        platforms: "riscv32"
     # - name: make
       # run: make
     - name: test
